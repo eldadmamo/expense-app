@@ -1,9 +1,12 @@
-import {Controller, Delete, Get, Post, Put} from "@nestjs/common"
+import {Controller, Delete, Get, Post, Put, Param} from "@nestjs/common"
 
-@Controller('report/income')
+@Controller('report/:type')
 export class AppController {
   @Get()
-  getAllIncomeReports(){
+  getAllIncomeReports(
+    @Param('type') type: string
+  ){
+    console.log(type)
     return []
   }
 
